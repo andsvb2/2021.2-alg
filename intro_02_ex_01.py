@@ -6,3 +6,18 @@
 # a) A parte inteira da divisão entre os valores de A e B
 # b) O resto da divisão entre os valores de A e B
 # c) O correspondente a 35 % do valor de B
+
+num_a = int(input("Digite um número inteiro: "))
+num_b = int(input("Digite outro número inteiro: "))
+
+# a) A parte inteira da divisão entre os valores de A e B
+div_int = num_a // num_b
+print(f"a) O resultado da divisão inteira de {num_a} por {num_b} é {div_int}.")
+
+# b) O resto da divisão entre os valores de A e B
+resto_div = num_a % num_b
+print(f"b) O resto da divisão de {num_a} por {num_b} é {div_int}.")
+
+# c) O correspondente a 35 % do valor de B
+porcentagem = 0.35 * num_b
+print(f"c) {porcentagem:.2f} é equivalente a 35% de {num_b}.")
