@@ -10,5 +10,5 @@ else:
     print("Eleitor obrigatório.")
     if idade == 18:
         sexo = input("Informe seu sexo, digitando M ou F: ")
-        if sexo == "M" or sexo == "m":
+        if sexo.lower() == "m":
             print("Lembre do seu Alistamento Militar.")
