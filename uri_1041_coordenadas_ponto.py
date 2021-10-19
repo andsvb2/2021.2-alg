@@ -16,9 +16,9 @@ if x == 0.0:
     if y == 0.0:
         local = "Origem"
     else:
-        local = "Eixo X"
+        local = "Eixo Y"
 elif y == 0.0:
-    local = "Eixo Y"
+    local = "Eixo X"
 elif x > 0.0:
     if y > 0.0:
         local = "Q1"
