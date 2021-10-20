@@ -6,4 +6,4 @@
 # 12% do valor total da compra. No final informe a matricula do vendedor, o
 # total da compra e a comissão do vendedor.
 #
-#
+matr_vend = input("Matrícula do vendedor: ")
