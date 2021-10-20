@@ -4,15 +4,21 @@
 # jogo, sabendo que o mesmo pode começar em um dia e terminar em outro, tendo
 # uma duração mínima de 1 hora e máxima de 24 horas.
 
-entrada = input()
-horas = [int(i) for i in entrada.split()]
+inicio,final = [int(i) for i in input().split()]
 
-if horas[0] == horas [1]:
-    duracao = 24
+if inicio < final:
+    duracao = final - inicio
 else:
-    if horas[0] > 12:
-        duracao = (24 - horas[0]) + horas[1]
-    else:
-        duracao = abs(horas[0] - horas[1])
-
+    duracao = (24 - inicio) + final
 print(f"O JOGO DUROU {duracao} HORA(S)")
+
+# # Criado para ajudar a pensar outro código.
+# #
+# inc,fim = (input().split())
+# inc = int(inc)
+# fim = int(fim)
+# if inc < fim:
+#     duracao = fim - inc
+# else:
+#     duracao = (24 - inc) + fim
+# print(f"O JOGO DUROU {duracao} HORA(S)")
