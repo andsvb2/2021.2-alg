@@ -17,10 +17,9 @@ ir_desc = slr_bruto * ir_aliq
 descontos =  inss_desc + ir_desc
 slr_liquido = slr_bruto - descontos
 
-saida = f"""
-Salário bruto: R$ {slr_bruto:.2f}
-IR: R$ {ir_desc:.2f}
-INSS: R$ {inss_desc:.2f}
-Soma dos descontos: R$ {descontos:.2f}
-Salário líquido: R$ {slr_liquido:.2f}"""
-print(saida)
+print(f"Salário bruto: R$ {slr_bruto:.2f}",
+    f"IR: R$ {ir_desc:.2f}",
+    f"INSS: R$ {inss_desc:.2f}",
+    f"Soma dos descontos: R$ {descontos:.2f}",
+    f"Salário líquido: R$ {slr_liquido:.2f}",
+    sep="\n")
