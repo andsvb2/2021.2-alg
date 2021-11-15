@@ -3,7 +3,7 @@
 codigo = int(input("Digite o código do item: "))
 
 if codigo not in range(100,106): # usado
-# if not 100 <= codigo <= 105:    # criado para ajudar a resolver questões de turma
+# if not 100 <= codigo <= 105:    # outra forma de filtrar
     print("Digite um código válido.")
 else:
     quantidade = int(input("Digite a quantidade: "))
