@@ -26,9 +26,12 @@ while True:
         processos.append(tmp_processo)
         listar_processos()
     elif comando.lower() == "remover":
-        processo_removido = processos.pop(0)
-        print(f"\nProcesso removido: {processo_removido}.")
-        listar_processos()
+        if len(processos) == 0:
+            print("A fila de processos está vazia.")
+        else:
+            processo_removido = processos.pop(0)
+            print(f"\nProcesso removido: {processo_removido}.")
+            listar_processos()
     elif comando.lower() == "fim":
         print("\nPrograma finalizado.")
         break
