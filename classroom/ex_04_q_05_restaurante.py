@@ -9,49 +9,61 @@ clientes = ['José', 'Maria', 'João', 'Ana', 'Antônio', 'Francisca', 'Francisc
 pedidos,pagamento,entrega = [],[],[]
 # tmp_clientes_pedidos,tmp_pedidos_pagamento,tmp_pagamento_entrega = [],[],[]
 
+def entrar_cliente():
+    pedidos.append(clientes.pop(0))
+    verificar_filas()
+    # return pedidos
+
+def mover_pagamento():
+    pagamento.append(pedidos.pop(0))
+    verificar_filas()
+    # return pagamento
+
+def mover_entrega():
+    entrega.append(pagamento.pop(0))
+    verificar_filas()
+    # return entrega
+
+def entregar():
+    entrega.pop(0)
+    verificar_filas()
+    # return entrega
+
 def verificar_filas():
     print(f'''\nClientes: {clientes}
 Pedidos: {pedidos}
 Pagamento: {pagamento}
 Entrega: {entrega}\n''')
 
-for i in range(len(clientes)):
-    tmp_clientes_pedidos = clientes.pop(0)
-    pedidos.append(tmp_clientes_pedidos)
-    verificar_filas()
-    # print(estado_das_filas)
+# for i in range(len(clientes)):
+#     entrar_cliente()
+#     if len(pedidos) == 5:
+#         for i in range(len(pedidos)):
+#             mover_pagamento()
+#             if len(pagamento) == 5:
+#                 for i in range(len(pagamento)):
+#                     mover_entrega()
+#                     if len(entrega) == 5:
+#                         entregar()
+
+
+while len(clientes) != 0:
+    entrar_cliente()
     if len(pedidos) == 5:
-        tmp_pedidos_pagamento = pedidos.pop(0)
-        pagamento.append(tmp_pedidos_pagamento)
-        verificar_filas()
-        # print(estado_das_filas)
+        mover_pagamento()
         if len(pagamento) == 5:
-            tmp_pagamento_entrega = pagamento.pop(0)
-            entrega.append(tmp_pagamento_entrega)
-            verificar_filas()
-            # print(estado_das_filas)
+            mover_entrega()
+            if len(entrega) == 5:
+                entregar()
 
+while True:
+    if len(clientes) == len(pedidos) == len(pagamento) == len(entrega) == 0:
+        print("Filas esvaziadas.")
+        break
 
-# while True:
-
-#     cliente_p_pedido = clientes.pop(0)
-#     pedidos.append(cliente_p_pedido)
-#     print(estado_das_filas)
-
-    # for i in clientes:
-    #     cliente_p_pedido = clientes.pop(0)
-    #     pedidos.append(cliente_p_pedido)
-    #     print(estado_das_filas)
-    #     if len(pedidos) == 5:
-    #         cliente_p_pagamento = pedidos.pop(0)
-    #         pagamento.append(cliente_p_pagamento)
-    #         print(estado_das_filas)
-    #         if len(pagamento) == 5:
-    #             cliente_p_entrega = pagamento.pop(0)
-    #             entrega.append(cliente_p_entrega)
-    #             print(estado_das_filas)
-
-
-    # if len(clientes) == len(pedidos) == len(pagamento) == len(entrega) == 0:
-    #     print("Filas esvaziadas.")
-    #     break
+    if len(pedidos) != 0:
+        mover_pagamento()
+    if len(pagamento) != 0:
+        mover_entrega()
+    if len(entrega) != 0:
+        entregar()
