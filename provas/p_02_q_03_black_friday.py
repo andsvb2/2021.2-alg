@@ -34,13 +34,8 @@ while True:
         total += preco - (preco * desc)
     elif comando.lower() == "z":
         print()
-        print(f'''Total de produtos: {tenis + blusa + viseira}.
-
-Tênis: {tenis}.
-Blusas: {blusa}.
-Viseiras: {viseira}.
-
-TOTAL A PAGAR: {total:.2f}''')
+        print(f"Total de produtos: {tenis + blusa + viseira}.",f"TOTAL A PAGAR: {total:.2f}",sep="\n")
+        # print(f"Total de produtos: {tenis + blusa + viseira}.",f"Tênis: {tenis}.",f"Blusas: {blusa}.",f"Viseiras: {viseira}.",f"\nTOTAL A PAGAR: {total:.2f}",sep="\n")
         break
     else:
         print("Opção inválida.\nDigite 'M' para visualizar o menu.")
