@@ -9,23 +9,27 @@ clientes = ['José', 'Maria', 'João', 'Ana', 'Antônio', 'Francisca', 'Francisc
 pedidos,pagamento,entrega = [],[],[]
 # tmp_clientes_pedidos,tmp_pedidos_pagamento,tmp_pagamento_entrega = [],[],[]
 
-estado_das_filas = f'''\nClientes: {clientes}
+def verificar_filas():
+    print(f'''\nClientes: {clientes}
 Pedidos: {pedidos}
 Pagamento: {pagamento}
-Entrega: {entrega}\n'''
+Entrega: {entrega}\n''')
 
 for i in range(len(clientes)):
     tmp_clientes_pedidos = clientes.pop(0)
     pedidos.append(tmp_clientes_pedidos)
-    print(estado_das_filas)
+    verificar_filas()
+    # print(estado_das_filas)
     if len(pedidos) == 5:
         tmp_pedidos_pagamento = pedidos.pop(0)
         pagamento.append(tmp_pedidos_pagamento)
-        print(estado_das_filas)
+        verificar_filas()
+        # print(estado_das_filas)
         if len(pagamento) == 5:
             tmp_pagamento_entrega = pagamento.pop(0)
             entrega.append(tmp_pagamento_entrega)
-            print(estado_das_filas)
+            verificar_filas()
+            # print(estado_das_filas)
 
 
 # while True:
