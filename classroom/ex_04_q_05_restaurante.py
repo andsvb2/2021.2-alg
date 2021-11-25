@@ -1,69 +1,69 @@
 #!/usr/bin/env python3
 
-# cria lista com os 40 nomes mais comuns no Brasil
+# cria lista com os 15 nomes mais comuns no Brasil
 # fonte: https://pt.wikipedia.org/wiki/Lista_de_prenomes_mais_comuns_no_Brasil
-# nomes = ['José', 'Maria', 'João', 'Ana', 'Antônio', 'Francisca', 'Francisco', 'Antônia', 'Carlos', 'Adriana', 'Paulo', 'Juliana', 'Pedro', 'Márcia', 'Lucas', 'Fernanda', 'Luiz', 'Patrícia', 'Marcos', 'Aline', 'Luís', 'Sandra', 'Gabriel', 'Camila', 'Rafael', 'Amanda', 'Daniel', 'Bruna', 'Marcelo', 'Jéssica', 'Bruno', 'Letícia', 'Eduardo', 'Júlia', 'Felipe', 'Luciana', 'Raimundo', 'Vanessa', 'Rodrigo', 'Mariana']
+# clientes = ['José', 'Maria', 'João', 'Ana', 'Antônio', 'Francisca', 'Francisco', 'Antônia', 'Carlos', 'Adriana', 'Paulo', 'Juliana', 'Pedro', 'Márcia', 'Lucas']
 
-clientes = ['José', 'Maria', 'João', 'Ana', 'Antônio', 'Francisca', 'Francisco', 'Antônia', 'Carlos', 'Adriana', 'Paulo', 'Juliana', 'Pedro', 'Márcia', 'Lucas']
+# esse bloco cria uma lista de 15 clientes a partir da entrada do usuário
+clientes =[]
+for i in range(15):
+    clientes.append(input("Digite o nome do cliente a ser atendido: "))
 
 pedidos,pagamento,entrega = [],[],[]
-# tmp_clientes_pedidos,tmp_pedidos_pagamento,tmp_pagamento_entrega = [],[],[]
 
 def entrar_cliente():
     pedidos.append(clientes.pop(0))
     verificar_filas()
-    # return pedidos
 
 def mover_pagamento():
     pagamento.append(pedidos.pop(0))
     verificar_filas()
-    # return pagamento
 
 def mover_entrega():
     entrega.append(pagamento.pop(0))
     verificar_filas()
-    # return entrega
 
 def entregar():
     entrega.pop(0)
     verificar_filas()
-    # return entrega
+    # if len(entrega) == 0:
+        # print("As filas estão vazias.")
+    # else:
+        # verificar_filas()
 
 def verificar_filas():
-    print(f'''\nClientes: {clientes}
-Pedidos: {pedidos}
-Pagamento: {pagamento}
-Entrega: {entrega}\n''')
+    print(f'''\nClientes ({len(clientes)}): {clientes}
+Pedidos ({len(pedidos)}): {pedidos}
+Pagamento ({len(pagamento)}): {pagamento}
+Entrega ({len(entrega)}): {entrega}\n''')
 
-# for i in range(len(clientes)):
-#     entrar_cliente()
-#     if len(pedidos) == 5:
-#         for i in range(len(pedidos)):
-#             mover_pagamento()
-#             if len(pagamento) == 5:
-#                 for i in range(len(pagamento)):
-#                     mover_entrega()
-#                     if len(entrega) == 5:
-#                         entregar()
+verificar_filas()
 
-
-while len(clientes) != 0:
+for i in range(5):
     entrar_cliente()
-    if len(pedidos) == 5:
-        mover_pagamento()
-        if len(pagamento) == 5:
-            mover_entrega()
-            if len(entrega) == 5:
-                entregar()
 
-while True:
-    if len(clientes) == len(pedidos) == len(pagamento) == len(entrega) == 0:
-        print("Filas esvaziadas.")
-        break
+for i in range(5):
+    mover_pagamento()
+    entrar_cliente()
 
-    if len(pedidos) != 0:
-        mover_pagamento()
-    if len(pagamento) != 0:
-        mover_entrega()
-    if len(entrega) != 0:
-        entregar()
+for i in range(5):
+    mover_entrega()
+    mover_pagamento()
+    entrar_cliente()
+
+for i in range(5):
+    entregar()
+    mover_entrega()
+    mover_pagamento()
+
+for i in range(5):
+    entregar()
+    mover_entrega()
+
+for i in range(5):
+    entregar()
+
+print("As filas estão vazias.")
+
+# É possível evitar o print das filas vazias e deixar apenas a mensagem de aviso.
+# Para isso é necessário excluir/comentar as linhas 23 e 62, além de descomentar as linhas 24-27.
