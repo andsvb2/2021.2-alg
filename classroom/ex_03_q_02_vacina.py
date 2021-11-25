@@ -24,9 +24,7 @@ for i in range(qtd_func):
         elif qual_vacina.startswith('p'):
             pfizer += 1
             situacao_vacina = "Pfizer"
-    mensagem = f"Funcionário(a): {nome_func}.\nVacina: {situacao_vacina}."
-    print(mensagem)
-    print()
+    print(f"\nFuncionário(a): {nome_func}.\nVacina: {situacao_vacina}.\n")
 
 print(f"Funcionários(as): {qtd_func}.",\
       f"Não foram vacinados(as): {nao_vacinados}.",\
