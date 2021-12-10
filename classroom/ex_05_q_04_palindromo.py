@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 def checar_palindromo(palavra):
+    # como reverter a string foi aprendido aqui: https://www.w3schools.com/python/python_howto_reverse_string.asp
     if palavra.strip().lower() == palavra[::-1].strip().lower():
         return True
     else:
