@@ -11,4 +11,4 @@ def fibonacci(limite):
     print(f"Sequência Fibonacci com {limite} número: {seq}") if len(seq) == 1 else print(f"Sequência Fibonacci com os {limite} primeiros números: {seq}")
 
 
-fibonacci(int(input("Digite um limite para a sequência de Fibonacci: ")))
+fibonacci(int(input("Qual o limite desejado para a sequência? "))) # alterado seguindo dica da Marina, com base em princípios de UX writing
