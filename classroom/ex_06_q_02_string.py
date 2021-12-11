@@ -2,7 +2,7 @@
 
 # Créditos
 # Ideia de fatiar string: https://stackoverflow.com/questions/19036084/count-occurrences-of-a-given-character-in-a-string-using-recursion
-# Augusto Almeida me alertou para o pedido de "letras".
+# Augusto Almeida me alertou para o pedido de "letras" e mostrou o método .isalpha().
 # Iriedson Vilar me sugeriu simplificar a função com o teste dentro dela.
 
 # Implemente uma função recursiva que receba um string e diga quantas letras ele tem.
