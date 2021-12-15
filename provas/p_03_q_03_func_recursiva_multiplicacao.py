@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
 # uso para gerar uma lista inicial
+
 # import random
-# lista_aleatoria = random.sample(range(1,100),5)
+# lista_teste = random.sample(range(1,50),5)
+# print(lista_teste)
 
 lista_teste = [15, 10, 14, 66, 29]
+
+# lista_teste = [15]
 
 def multiplicacao(lista):
     if len(lista) == 1:
