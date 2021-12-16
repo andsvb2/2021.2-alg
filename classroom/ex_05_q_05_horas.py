@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 
 def converter_horas(num):
-    if num in range(0,13):
-        if num == 0:
-            hora = 12
+    if num == 0:
+        hora = 12
         turno = "A.M."
+        return hora,turno
+    elif num in range(1,12):
+        hora = num
+        turno = "A.M."
+        return hora,turno
+    elif num == 12:
+        hora = 12
+        turno = "P.M."
         return hora,turno
     elif num in range(13,24):
         hora = num - 12
@@ -12,8 +19,8 @@ def converter_horas(num):
         return hora,turno
 
 def exibir_horas(prim,seg):
-    hora,turno = converter_horas(prim)
-    print(f"\n{hora}:{seg} {turno}\n")
+    hora,periodo = converter_horas(prim)
+    print(f"\n{hora}:{seg} {periodo}\n")
 
 print("Digite uma hora inválida para encerrar o programa.")
 
